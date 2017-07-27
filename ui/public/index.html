@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      #app {
+        width: 600px;
+        margin: 0 auto;
+      }
+
+      .editor .editor-main {
+        width: 400px;
+        display: inline-block;
+      }
+
+      .editor .editor-sidebar {
+        float: right;
+      }
+
+      .editor textarea {
+        width: 100%;
+        min-height: 200px;
+        border-radius: 5px;
+        border: 1px solid #d3d3d3;
+        padding: 5px;
+      }
+
+      #stack {
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <div class="editor">
+        <div class="editor-main">
+          <textarea id="asm">
+            LDV A 41
+            MOV C A
+            LDV A 41
+            LDP A C
+            HLT
+          </textarea>
+        </div>
+        <div class="editor-sidebar">
+          <button>Compile</button>
+          <button id="cpr-button">Compile & Run</button>
+        </div>
+      </div>
+      <div class="registers">
+        <h3>Registers:</h3>
+        A: <span id="register-a">0</span><br />
+        B: <span id="register-b">0</span><br />
+        C: <span id="register-c">0</span><br />
+        D: <span id="register-d">0</span><br />
+        IP: <span id="register-ip">0</span><br />
+        SP: <span id="register-sp">0</span>
+      </div>
+      <div class="registers">
+        <h3>Stack:</h3>
+        <pre id="stack">[]</pre>
+      </div>
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js" charset="utf-8"></script>
+  </body>
+</html>

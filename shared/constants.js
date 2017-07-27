@@ -1,0 +1,31 @@
+module.exports = {
+  STACK_SIZE: 0xff,
+  MEMORY_SIZE: 0xffff,
+  REGISTERS: ['A', 'B', 'C', 'D'],
+  INSTRUCTION_MAP: [
+    'MOV',
+    'LDV',
+    'LDR',
+    'LDM',
+    'ATH',
+    'CAL',
+    'JLT',
+    'RET',
+    'PSH',
+    'POP',
+    'SYS',
+    'HLT',
+    'JMP',
+    'JMR',
+    'LDA',
+    'LDP'
+  ],
+  DESTINATION_SHIFT: 4,
+  SOURCE_SHIFT: 6,
+  LONG_ADDRESS_SHIFT: 6,
+  ADDRESS_SHIFT: 8,
+  OPERATION_SHIFT: 8,
+  ARITHMETIC_MODE_SHIFT: 12,
+  BITWISE_SHIFT_SHIFT: 13,
+  SHOULD_EXIT: false
+};
